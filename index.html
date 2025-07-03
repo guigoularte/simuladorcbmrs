@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Exigências CBMRS - Segurança Contra Incêndio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulador de Exigências CBMRS</h1>
+            <p>Determine as medidas de segurança contra incêndio necessárias para sua edificação</p>
+        </header>
+
+        <main>
+            <div class="form-section">
+                <h2>Dados da Edificação</h2>
+                
+                <div class="form-group">
+                    <label for="ocupacao">Tipo de Ocupação:</label>
+                    <select id="ocupacao" name="ocupacao">
+                        <option value="">Selecione o tipo de ocupação</option>
+                        <option value="A">Grupo A - Residencial</option>
+                        <option value="B">Grupo B - Serviço de Hospedagem</option>
+                        <option value="C">Grupo C - Comercial</option>
+                        <option value="D">Grupo D - Serviço Profissional/Administrativo</option>
+                        <option value="E">Grupo E - Educacional e Cultura Física</option>
+                        <option value="F">Grupo F - Local de Reunião de Público</option>
+                        <option value="G">Grupo G - Serviço de Saúde e Institucional</option>
+                        <option value="H">Grupo H - Industrial</option>
+                        <option value="I">Grupo I - Depósito</option>
+                        <option value="J">Grupo J - Garagem e Estacionamento</option>
+                        <option value="L">Grupo L - Explosivos</option>
+                        <option value="M">Grupo M - Especial</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">Área Total Construída (m²):</label>
+                    <input type="number" id="area" name="area" min="1" placeholder="Ex: 300">
+                </div>
+
+                <div class="form-group">
+                    <label for="altura">Altura da Edificação (metros):</label>
+                    <input type="number" id="altura" name="altura" min="0" step="0.1" placeholder="Ex: 6.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="pavimentos">Número de Pavimentos:</label>
+                    <input type="number" id="pavimentos" name="pavimentos" min="1" placeholder="Ex: 2">
+                </div>
+
+                <div class="form-group">
+                    <label for="carga-incendio">Carga de Incêndio (MJ/m²):</label>
+                    <select id="carga-incendio" name="carga-incendio">
+                        <option value="">Selecione a carga de incêndio</option>
+                        <option value="baixa">Baixa (até 300 MJ/m²)</option>
+                        <option value="media">Média (300 a 1200 MJ/m²)</option>
+                        <option value="alta">Alta (acima de 1200 MJ/m²)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="lotacao">Lotação Máxima (pessoas):</label>
+                    <input type="number" id="lotacao" name="lotacao" min="1" placeholder="Ex: 50">
+                </div>
+
+                <button type="button" id="simular" onclick="simularExigencias()">Simular Exigências</button>
+            </div>
+
+            <div class="results-section" id="results" style="display: none;">
+                <h2>Resultados da Simulação</h2>
+                
+                <div class="result-card">
+                    <h3>Classificação da Edificação</h3>
+                    <div id="classificacao-resultado"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Tipo de Plano Necessário</h3>
+                    <div id="tipo-plano"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Medidas de Segurança Obrigatórias</h3>
+                    <div id="medidas-seguranca"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Resoluções Técnicas Aplicáveis</h3>
+                    <div id="resolucoes-aplicaveis"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Próximos Passos</h3>
+                    <div id="proximos-passos"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Este simulador é baseado na legislação do CBMRS vigente. Para informações oficiais, consulte sempre as Resoluções Técnicas atualizadas.</p>
+            <p>Desenvolvido por Manus AI - 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
